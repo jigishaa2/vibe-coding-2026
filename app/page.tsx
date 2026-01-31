@@ -99,91 +99,86 @@ export default function Home() {
   </div>
 </section>
 
-      {/* ===================== SECTION 2 ===================== */}
-      <section className="h-screen snap-start px-6">
-        <div className="max-w-[760px] mx-auto pt-20 md:pt-24">
-          <div className="border border-black">
-            <div className="flex items-center justify-between px-4 py-3 border-b border-black text-sm font-medium">
-              <span>About</span>
-              <span className="opacity-60">▲</span>
-            </div>
+{/* ===================== SECTION 2 ===================== */}
+<section className="min-h-screen snap-start px-6 py-20 md:py-24">
+  <div className="max-w-[760px] mx-auto">
+    <div className="border border-black bg-white">
+      <div className="flex items-center justify-between px-4 py-3 border-b border-black text-sm font-medium">
+        <span>About</span>
+        <span className="opacity-60">▲</span>
+      </div>
 
-            <div className="px-5 py-6 text-[15px] md:text-[16px] leading-[1.7] tracking-[-0.015em]">
-              <p>hi, i’m jigi. i like making things, mostly out of curiosity.</p>
+      <div className="px-5 py-6 text-[15px] md:text-[16px] leading-[1.7] tracking-[-0.015em]">
+        <p>hi, i’m jigi. i like making things, mostly out of curiosity.</p>
 
-              <p className="mt-6">
-                right now, i’m spending most of my time{" "}
-                <Highlight>building furniture</Highlight>, experimenting with vibe coding,
-                and chasing small creative “what ifs.”
-              </p>
+        <p className="mt-6">
+          right now, i’m spending most of my time{" "}
+          <Highlight>building furniture</Highlight>, experimenting with vibe coding,
+          and chasing small creative “what ifs.”
+        </p>
 
-              <p className="mt-6">
-                sometimes it’s a bed frame. sometimes it’s a tiny website that types nicely.
-                sometimes it’s just me trying some silly ideas at 2am or moving furniture around
-                more than i probably should.
-              </p>
+        <p className="mt-6">
+          sometimes it’s a bed frame. sometimes it’s a tiny website that types nicely.
+          sometimes it’s just me trying some silly ideas at 2am or moving furniture around
+          more than i probably should.
+        </p>
 
-              <p className="mt-6">
-                i have a big love for{" "}
-                <Highlight>mid-century modern</Highlight> design and i’m slowly been building
-                my space around it with hand built MCM furniture, and probably too many
-                “intentional” objects.
-              </p>
+        <p className="mt-6">
+          i have a big love for{" "}
+          <Highlight>mid-century modern</Highlight> design and i’m slowly been building
+          my space around it with hand built MCM furniture, and probably too many
+          “intentional” objects.
+        </p>
 
-              <p className="mt-6">
-                this space is mostly for documenting my small creative experiments,
-                vibe coding projects, and whatever i’m currently curious about.
-              </p>
+        <p className="mt-6">
+          this space is mostly for documenting my small creative experiments,
+          vibe coding projects, and whatever i’m currently curious about.
+        </p>
 
-              <p className="mt-6">
-                if you’re also{" "}
-                <Highlight>curious, multi-passionate, and slightly experimental       </Highlight>{" "}    
-                 
-                              welcomeee. this place is for you too.
-              </p>
+        <p className="mt-6">
+          if you’re also{" "}
+          <Highlight>curious, multi-passionate, and slightly experimental</Highlight>{" "}
+          welcomeee. this place is for you too.
+        </p>
 
-              <p className="mt-8 text-[13px] opacity-60">(scroll ↓)</p>
-            </div>
-          </div>
+        <p className="mt-8 text-[13px] opacity-60">(scroll ↓)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{/* ===================== SECTION 3 — CREATIVE CORNER ===================== */}
+<section className="min-h-screen snap-start px-6 py-20 md:py-24">
+  <div className="max-w-[760px] mx-auto">
+    <div className="border border-black bg-white">
+      <div className="flex items-center justify-between px-4 py-3 border-b border-black text-sm font-medium">
+        <span>Creative Corner</span>
+        <span className="opacity-60">▲</span>
+      </div>
+
+      <div className="px-5 py-10 text-[15px] md:text-[16px] leading-[1.7] tracking-[-0.015em]">
+        <p className="text-base md:text-lg">quick pause.</p>
+
+        <p className="mt-4">what are you trying to build right now?</p>
+
+        <div className="mt-6">
+          <input
+            value={buildText}
+            onChange={(e) => setBuildText(e.target.value)}
+            placeholder="type here…"
+            className="w-full border border-black px-3 py-2 text-[15px] md:text-[16px] bg-white outline-none focus:ring-0"
+          />
         </div>
-      </section>
 
-      {/* ===================== SECTION 3 — CREATIVE CORNER ===================== */}
-      <section className="h-screen snap-start px-6">
-        <div className="max-w-[760px] mx-auto pt-20 md:pt-24">
-          <div className="border border-black">
-            <div className="flex items-center justify-between px-4 py-3 border-b border-black text-sm font-medium">
-              <span>Creative Corner</span>
-              <span className="opacity-60">▲</span>
-            </div>
+        <p className="mt-8 opacity-70">or think about this:</p>
 
-            <div className="px-5 py-10 text-[15px] md:text-[16px] leading-[1.7] tracking-[-0.015em]">
-              <p className="text-base md:text-lg">quick pause.</p>
+        <p className="mt-3 italic">“what small experiment could you try this week?”</p>
 
-              <p className="mt-4">what are you trying to build right now?</p>
-
-              <div className="mt-6">
-                <input
-                  value={buildText}
-                  onChange={(e) => setBuildText(e.target.value)}
-                  placeholder="type here…"
-                  className="w-full border border-black px-3 py-2 text-[15px] md:text-[16px] bg-white outline-none focus:ring-0"
-                />
-              </div>
-
-              <p className="mt-8 opacity-70">or think about this:</p>
-
-              <p className="mt-3 italic">
-                “what small experiment could you try this week?”
-              </p>
-
-              <p className="mt-10 text-[13px] opacity-60">
-                (saved only in this tab for now)
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-  );
+        <p className="mt-10 text-[13px] opacity-60">(saved only in this tab for now)</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+);
 }
