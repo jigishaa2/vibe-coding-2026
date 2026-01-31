@@ -62,7 +62,7 @@ const CHECK_IN: Record<CheckInKey, { label: string; lines: string[] }> = {
     ],
   },
   building: {
-    label: "building something real",
+    label: "building something fun",
     lines: [
       "love that.",
       "",
@@ -72,7 +72,7 @@ const CHECK_IN: Record<CheckInKey, { label: string; lines: string[] }> = {
     ],
   },
   collecting: {
-    label: "collecting ideas quietly",
+    label: "researching ideas",
     lines: [
       "that's okay too.",
       "",
@@ -92,7 +92,7 @@ const CHECK_IN: Record<CheckInKey, { label: string; lines: string[] }> = {
     ],
   },
   resting: {
-    label: "resting + recharging",
+    label: "just resting",
     lines: [
       "good choice.",
       "",
