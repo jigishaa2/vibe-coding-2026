@@ -1,3 +1,4 @@
+// app/page.tsx
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
@@ -160,9 +161,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===================== SECTION 2 ===================== */}
-      <section className="h-[100svh] snap-start px-6">
-        <div className="max-w-[760px] mx-auto pt-20 md:pt-24 pb-10">
+      {/* ===================== SECTION 2 — BLOG STYLE ===================== */}
+      {/* ✅ FIX: remove forced h-[100svh] so content defines height, and use snap-start + min-h to keep snapping pleasant */}
+      <section className="snap-start px-6 min-h-[100svh]">
+        <div className="max-w-[760px] mx-auto pt-20 md:pt-24 pb-16">
           <div className="border border-black">
             <div className="flex items-center justify-between px-4 py-3 border-b border-black text-sm font-medium">
               <span>About</span>
@@ -172,7 +174,6 @@ export default function Home() {
             <div className="px-5 py-6 text-[15px] md:text-[16px] leading-[1.7] tracking-[-0.015em]">
               <p>nice to meet you, i’m jigi.</p>
 
-
               <p className="mt-6">
                 this space is mostly for documenting small creative experiments,
                 silly vibe coding projects, and whatever i’m currently curious about.
@@ -180,27 +181,27 @@ export default function Home() {
 
               <p className="mt-6">
                 right now, i’m spending most of my time{" "}
-                <Highlight>building furniture</Highlight>, experimenting with vibe coding,
-                and chasing small creative “what ifs.”
+                <Highlight>building furniture</Highlight>, experimenting with vibe
+                coding, and chasing small creative “what ifs.”
               </p>
 
               <p className="mt-6">
-                sometimes it’s a bed frame. sometimes it’s a tiny website that types nicely.
-                sometimes it’s just me trying some silly ideas at 2am or moving furniture
-                around more than i probably should.
+                sometimes it’s a bed frame. sometimes it’s a tiny website that types
+                nicely. sometimes it’s just me trying some silly ideas at 2am or
+                moving furniture around more than i probably should.
               </p>
 
               <p className="mt-6">
                 i have a big love for{" "}
-                <Highlight>mid-century modern</Highlight> design and i’ve slowly been building
-                my space around it with hand built MCM furniture, and probably too many
-                “intentional” objects.
+                <Highlight>mid-century modern</Highlight> design and i’ve slowly been
+                building my space around it with hand built MCM furniture, and
+                probably too many “intentional” objects.
               </p>
 
               <p className="mt-6">
                 if you’re also{" "}
                 <Highlight>curious, multi-passionate, and slightly experimental</Highlight>{" "}
-                  welcomeee. this place is for you too.
+                welcomeee. this place is for you too.
               </p>
 
               <p className="mt-8 text-[13px] opacity-60">(scroll ↓)</p>
@@ -210,79 +211,79 @@ export default function Home() {
       </section>
 
       {/* ===================== SECTION 4 — MULTI-PASSION CHECK-IN ===================== */}
-<section className="h-[100svh] snap-start px-6">
-  <div className="max-w-[760px] mx-auto pt-20 md:pt-24 pb-10">
-
-    {/* Box */}
-    <div className="border border-black">
-      {/* Header */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-black text-sm font-medium">
-        <span>Multi-Passion Check-in</span>
-        <span className="opacity-60">▲</span>
-      </div>
-
-      {/* Content */}
-      <div className="px-5 py-10 text-[15px] md:text-[16px] leading-[1.7] tracking-[-0.015em]">
-        <p className="text-base md:text-lg">quick check.</p>
-
-        <p className="mt-4">what feels most like you lately?</p>
-
-        <p className="mt-2 text-[13px] opacity-60">(no pressure. just today.)</p>
-
-        {/* Options */}
-        {!checkIn && (
-          <div className="mt-8 space-y-3">
-            {(Object.keys(CHECK_IN) as CheckInKey[]).map((key) => (
-              <button
-                key={key}
-                onClick={() => setCheckIn(key)}
-                className="w-full text-left border border-black px-4 py-3 hover:bg-black hover:text-white transition"
-              >
-                {CHECK_IN[key].label}
-              </button>
-            ))}
-          </div>
-        )}
-
-        {/* Result */}
-        {checkIn && (
-          <div className="mt-8">
-            <div className="border border-black px-4 py-5">
-              {CHECK_IN[checkIn].lines.map((l, idx) => (
-                <p
-                  key={idx}
-                  className={l === "" ? "mt-3" : idx === 0 ? "" : "mt-2"}
-                >
-                  {l === "" ? "\u00A0" : l}
-                </p>
-              ))}
+      {/* ✅ FIX: same deal — avoid hard h-[100svh], give it min height + extra bottom padding so it never “collides” on small screens */}
+      <section className="snap-start px-6 min-h-[100svh]">
+        <div className="max-w-[760px] mx-auto pt-20 md:pt-24 pb-24">
+          {/* Box */}
+          <div className="border border-black">
+            {/* Header */}
+            <div className="flex items-center justify-between px-4 py-3 border-b border-black text-sm font-medium">
+              <span>Multi-Passion Check-in</span>
+              <span className="opacity-60">▲</span>
             </div>
 
-            <div className="mt-6 flex items-center gap-3">
-              <button
-                onClick={() => setCheckIn(null)}
-                className="border border-black px-4 py-2 text-sm hover:bg-black hover:text-white transition"
-              >
-                pick another
-              </button>
+            {/* Content */}
+            {/* ✅ FIX: reduce vertical padding slightly on mobile so content stays inside viewport without pushing into next snap area */}
+            <div className="px-5 py-8 md:py-10 text-[15px] md:text-[16px] leading-[1.7] tracking-[-0.015em]">
+              <p className="text-base md:text-lg">quick check.</p>
 
-              <p className="text-[13px] opacity-60">(come back tomorrow)</p>
+              <p className="mt-4">what feels most like you lately?</p>
+
+              <p className="mt-2 text-[13px] opacity-60">(no pressure. just today.)</p>
+
+              {/* Options */}
+              {!checkIn && (
+                <div className="mt-8 space-y-3">
+                  {(Object.keys(CHECK_IN) as CheckInKey[]).map((key) => (
+                    <button
+                      key={key}
+                      onClick={() => setCheckIn(key)}
+                      className="w-full text-left border border-black px-4 py-3 hover:bg-black hover:text-white transition"
+                    >
+                      {CHECK_IN[key].label}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* Result */}
+              {checkIn && (
+                <div className="mt-8">
+                  <div className="border border-black px-4 py-5">
+                    {CHECK_IN[checkIn].lines.map((l, idx) => (
+                      <p
+                        key={idx}
+                        className={l === "" ? "mt-3" : idx === 0 ? "" : "mt-2"}
+                      >
+                        {l === "" ? "\u00A0" : l}
+                      </p>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 flex items-center gap-3 flex-wrap">
+                    <button
+                      onClick={() => setCheckIn(null)}
+                      className="border border-black px-4 py-2 text-sm hover:bg-black hover:text-white transition"
+                    >
+                      pick another
+                    </button>
+
+                    <p className="text-[13px] opacity-60">(come back tomorrow)</p>
+                  </div>
+                </div>
+              )}
+
+              <p className="mt-10 text-[13px] opacity-60">(end)</p>
             </div>
           </div>
-        )}
 
-        <p className="mt-10 text-[13px] opacity-60">(end)</p>
-      </div>
-    </div>
-
-    {/* Footer signature — directly BELOW box */}
-    <div className="mt-2 ml-1 text-[11px] md:text-[12px] opacity-50">
-      built with &lt;3 and a lot of coffee
-    </div>
-
-  </div>
-</section>
-
+          {/* Footer signature — directly BELOW box */}
+          {/* ✅ FIX: give it breathing room + prevent it from being visually clipped on mobile */}
+          <div className="mt-3 ml-1 text-[11px] md:text-[12px] opacity-50">
+            built with &lt;3 and a lot of coffee
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
