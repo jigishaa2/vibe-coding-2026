@@ -94,7 +94,7 @@ export default function Home() {
   )}
 
   <div className="mt-10 text-sm opacity-60 flex flex-col items-center gap-2">
-    <span>scroll to explore</span>
+    <span>scroll</span>
     <span className="text-xl">↓</span>
   </div>
 </section>
